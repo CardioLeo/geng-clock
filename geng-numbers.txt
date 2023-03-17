@@ -1,0 +1,10 @@
+43200
+This is how many seconds are in 5 geng, or a half day
+86400
+This is how many seconds are in 10 geng, or a full day
+4320
+This is how many seconds are in a half-geng, or 72 minutes, or 1.2 hours
+2160
+This is how many seconds are in a quarter-geng, or 36 minutes, 0.6 hours
+8640
+This is how many seconds are in a single, full geng, or 144 minutes, or 2.4 hours

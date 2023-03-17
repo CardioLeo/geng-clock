@@ -1,0 +1,89 @@
+# Author: William Z Chadwick
+# Date Created: 03/14/2023
+# Date Modified: 03/14/2023
+# Description: Pseudocode for a program in Cpp and Bash to exectue a Geng Clock
+# Usage: none executable
+
+
+##########
+
+
+# I need to write out the equivalences in separate documentation;
+#
+#
+# bool geng-timer = true;
+#
+# is set to true when timer is started; set to false if paused;
+# if paused, pause timer; 
+#
+#
+# int geng = 8640;
+#
+# var represents how much a single geng equals in seconds;
+# 
+#
+# int geng-half = geng/2;
+#
+# var represents how much a half-geng equals in seconds;
+# that is, geng/2 = 4320 seconds;
+# one geng in terms of hours is 2.4 hours;
+#
+#
+# int geng-quarter = geng-half/2;
+#
+# var represents how much a quarter-geng equals in seconds;
+# that is, geng/4 = 2160 seconds;
+#
+# 
+# int day-in-geng = geng*10;
+#
+# in seconds, a day is equal to [];
+# this is the same as the number of seconds in any day;
+# but it is worth noting, there are 10 geng in any day,
+# and there are 5 geng in a half day;
+#
+#
+# int half-day-geng = geng*5;
+#
+# just as a day in geng is 10 geng,
+# so, too, a half-day in geng is 5 geng.
+# Given a perfect 12 hours of daylight,
+# one would have exactly 5 geng;
+# or, if you prefer, day measured in 12 hours of activities
+# would amount to 5 geng. 3 geng would be just short
+# of an 8 hour work day. These equivalences clarify
+# to some extent what a it means to measure a day in geng.
+
+
+##########
+
+
+# declare variables
+
+bool geng-timer = true;
+int geng = 8640;
+ing geng-half = geng/2;
+int geng-quarter = geng-half/2;
+int day-in-geng = geng*10;
+int half-day-geng = geng*5;
+
+
+##########
+
+
+# basic function
+
+
+counter = 0;
+while (geng-timer = true) {
+  wait 1 second;
+  counter ++;
+}
+
+
+
+# the following really ought to be written in switch statements for cpp, and case statements for bash;
+#   if (counter = geng) {
+#     cout << "It has been one whole Geng since you started the Geng Timer" << endl;
+#   }
+#   if (counter = )
