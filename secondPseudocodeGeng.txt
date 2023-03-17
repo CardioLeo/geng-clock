@@ -1,77 +1,89 @@
-#
-#
-#
-#
-
-# pseudo-code notes for my geng clock application;
-# in particular, this text documents how I came to discover
-# exactly how much minutes or hours, or seconds, go into one geng.                                               
-
-# Design process question:
-
-# what data is needed?
-# 1. timer / counter
-# 2. strings list [secondary]
-
-# Define geng_clock # 更                          
-# in 24 hours there are x gung, so many hours long
-# before another geng
-
-# how long is a geng, though? I have to look it up again.
-
----
-
-# 1 geng is about 2.5h.
-
-# second = 1;
-# minute = 60 * second;
-# hour = minute * 60;
-# day = hour * 24;
-
-# geng = hour * ~2.5;
+# Author: William Z Chadwick
+# Date Created: 03/14/2023
+# Date Modified: 03/14/2023
+# Description: Pseudocode for a program in Cpp and Bash to exectue a Geng Clock
+# Usage: none executable
 
 
 ##########
 
 
-# how many geng fit in a day?
-# how many minutes are in a geng?
-# how many seconds are in a geng?
+# I need to write out the equivalences in separate documentation;
+#
+#
+# bool geng-timer = true;
+#
+# is set to true when timer is started; set to false if paused;
+# if paused, pause timer; 
+#
+#
+# int geng = 8640;
+#
+# var represents how much a single geng equals in seconds;
+# 
+#
+# int geng-half = geng/2;
+#
+# var represents how much a half-geng equals in seconds;
+# that is, geng/2 = 4320 seconds;
+# one geng in terms of hours is 2.4 hours;
+#
+#
+# int geng-quarter = geng-half/2;
+#
+# var represents how much a quarter-geng equals in seconds;
+# that is, geng/4 = 2160 seconds;
+#
+# 
+# int day-in-geng = geng*10;
+#
+# in seconds, a day is equal to [];
+# this is the same as the number of seconds in any day;
+# but it is worth noting, there are 10 geng in any day,
+# and there are 5 geng in a half day;
+#
+#
+# int half-day-geng = geng*5;
+#
+# just as a day in geng is 10 geng,
+# so, too, a half-day in geng is 5 geng.
+# Given a perfect 12 hours of daylight,
+# one would have exactly 5 geng;
+# or, if you prefer, day measured in 12 hours of activities
+# would amount to 5 geng. 3 geng would be just short
+# of an 8 hour work day. These equivalences clarify
+# to some extent what a it means to measure a day in geng.
 
-# if 24h is not cleanly divisible into g,
-# then the most accurate measurement will
-# probably be by seconds.
 
-### note: I discovered 24 is cleanly divisible into g,
-### and seconds will probably be best for measuring geng overall with a clock.
+##########
 
-# 24/g = 9.6
-# 9.6 * 2.5 = 24
 
-# so there are 9.6 geng in a day.
-# how might we make it a whole number?
-# I suspect the closest way to do it fairly
-# will be to make it divisible by seconds.
+# declare variables
 
-# s*m*h
-# 60*60*24 = 86,400
+bool geng-timer = true;
+int geng = 8640;
+ing geng-half = geng/2;
+int geng-quarter = geng-half/2;
+int day-in-geng = geng*10;
+int half-day-geng = geng*5;
 
-# according to Wikipedia:
-# "During the night, time was more commonly
-# reckoned during the night by the "watches"
-# (Chinese: 更, oc *kæŋ,[46] p gēng) of the
-# guard, which were reckoned as a fifth of
-# the time from sunset to sunrise.[44][52]"
 
-# this means, for my purposes, 1 geng = 12/5,
-# or 24/10 (which I was suspecting).
+##########
 
-# 12 / 5 = 2.4
-# g = 2.4h
-# there are 10 geng in a day, then
 
-# geng_minutes = g * m = 144;
-# geng_seconds = g * m * s = 8640;
-# is the seconds in a day still equal to the
-# 24h scheme?
-# geng_seconds_in_day = 10 * 8640 = 86400;
+# basic function
+
+
+counter = 0;
+while (geng-timer = true) {
+  wait 1 second;
+  counter ++;
+}
+
+
+
+# the following really ought to be written in switch statements for cpp, and case statements for bash;
+#   if (counter = geng) {
+#     cout << "It has been one whole Geng since you started the Geng Timer" << endl;
+#   }
+#   if (counter = )

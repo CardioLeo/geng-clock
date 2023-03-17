@@ -3,163 +3,75 @@
 #
 #
 
-# from Notecards
+# pseudo-code notes for my geng clock application;
+# in particular, this text documents how I came to discover
+# exactly how much minutes or hours, or seconds, go into one geng.                                               
+
+# Design process question:
+
+# what data is needed?
+# 1. timer / counter
+# 2. strings list [secondary]
+
+# Define geng_clock # 更                          
+# in 24 hours there are x gung, so many hours long
+# before another geng
+
+# how long is a geng, though? I have to look it up again.
+
+---
+
+# 1 geng is about 2.5h.
+
+# second = 1;
+# minute = 60 * second;
+# hour = minute * 60;
+# day = hour * 24;
+
+# geng = hour * ~2.5;
 
 
 ##########
 
 
-1.
+# how many geng fit in a day?
+# how many minutes are in a geng?
+# how many seconds are in a geng?
 
-Do I need a data structure?
+# if 24h is not cleanly divisible into g,
+# then the most accurate measurement will
+# probably be by seconds.
 
-Could be done both ways:
+### note: I discovered 24 is cleanly divisible into g,
+### and seconds will probably be best for measuring geng overall with a clock.
 
-Functional:
+# 24/g = 9.6
+# 9.6 * 2.5 = 24
 
-24h Timer
+# so there are 9.6 geng in a day.
+# how might we make it a whole number?
+# I suspect the closest way to do it fairly
+# will be to make it divisible by seconds.
 
-Geng = 2.4h
+# s*m*h
+# 60*60*24 = 86,400
 
-h=60m
-m=60s
-s=sleep 1
+# according to Wikipedia:
+# "During the night, time was more commonly
+# reckoned during the night by the "watches"
+# (Chinese: 更, oc *kæŋ,[46] p gēng) of the
+# guard, which were reckoned as a fifth of
+# the time from sunset to sunrise.[44][52]"
 
-[chron? look into 1 sec for var, different already existing functions]
+# this means, for my purposes, 1 geng = 12/5,
+# or 24/10 (which I was suspecting).
 
-Do I make it a timer or convert 24 present time into Geng?
+# 12 / 5 = 2.4
+# g = 2.4h
+# there are 10 geng in a day, then
 
-
-##########
-
-
-2.
-
-Geng Clock
-
-Primary Data:
-
-1 Geng
-
-1 Geng = 2.4hours
-24h=10g
-1/2g=1.2h
-1/4g=0.6h=36m
-=0.6h=(6/10=3/5)
-[60/5=12]
-[1/5h=12m]
-[3/5h=12mx3=36m]
-
-# Equivalences
-
-1/4g=36m=2160s
-1/2g=72m=4320s
-1g=2.4h=144m=8640s
-
-60(s)x60(m)x24(h)
-= 86,400
-
-24x60=1440 = minutes in a day
-
-1440m=24h
-86,400s=24h
-
-
-##########
-
-
-3.
-
-1st, Timer
-
-geng-start.sh
-# Author
-# Date x2
-# Description
-# Usage:
-
-while i > 86,400
-wait 1 sec
-echo i
-i++
-
-
-##########
-
-
-4.
-
-geng-start.sh
-
-# ~~~~~~~~~comments, pseudocode
-
-while user says go; do:
-while i<86,400:
-count 1 second;
-i++
-restart loop
-if go=false
-stop loop
-
-----------
-
-while timer = true
-  while i<86,400:
-    i++;
-  if i=seconds totaling 1/2g
-    print "it's 1/2g!"
-
-# find out how to make it division
-
-
-##########
-
-
-5.
-
-geng-start.sh
-
-while timer = true;
-  while i<86400:
-    sleep 1s;
-    i++;
-  if i=second totalling 1/2g
-    print "it's 1/2g!"
-
-variables:
-
-geng = 8640s
-geng-q=geng/4
-geng-h=geng/2
-
-geng-quarter = 2160s
-
-# 1/4 geng is 36m & 2160s
-
-geng-half = 4320s
-
-# 1/2 geng is 72 minutes & 4320s
-
-
-##########
-
-
-6.
-
-Declare variables
-
-bool gengTimer=true;
-geng-in-day-seconds
-geng-half
-geng-quarter
-day-in-geng
-half-day-in-geng
-
-when the counter = variables & multiples of them, print associated statement
-
-while gt=true
-
-
-##########
-
-# End
+# geng_minutes = g * m = 144;
+# geng_seconds = g * m * s = 8640;
+# is the seconds in a day still equal to the
+# 24h scheme?
+# geng_seconds_in_day = 10 * 8640 = 86400;
