@@ -1,0 +1,77 @@
+#
+#
+#
+#
+
+# pseudo-code notes for my geng clock application;
+# in particular, this text documents how I came to discover
+# exactly how much minutes or hours, or seconds, go into one geng.                                               
+
+# Design process question:
+
+# what data is needed?
+# 1. timer / counter
+# 2. strings list [secondary]
+
+# Define geng_clock # 更                          
+# in 24 hours there are x gung, so many hours long
+# before another geng
+
+# how long is a geng, though? I have to look it up again.
+
+---
+
+# 1 geng is about 2.5h.
+
+# second = 1;
+# minute = 60 * second;
+# hour = minute * 60;
+# day = hour * 24;
+
+# geng = hour * ~2.5;
+
+
+##########
+
+
+# how many geng fit in a day?
+# how many minutes are in a geng?
+# how many seconds are in a geng?
+
+# if 24h is not cleanly divisible into g,
+# then the most accurate measurement will
+# probably be by seconds.
+
+### note: I discovered 24 is cleanly divisible into g,
+### and seconds will probably be best for measuring geng overall with a clock.
+
+# 24/g = 9.6
+# 9.6 * 2.5 = 24
+
+# so there are 9.6 geng in a day.
+# how might we make it a whole number?
+# I suspect the closest way to do it fairly
+# will be to make it divisible by seconds.
+
+# s*m*h
+# 60*60*24 = 86,400
+
+# according to Wikipedia:
+# "During the night, time was more commonly
+# reckoned during the night by the "watches"
+# (Chinese: 更, oc *kæŋ,[46] p gēng) of the
+# guard, which were reckoned as a fifth of
+# the time from sunset to sunrise.[44][52]"
+
+# this means, for my purposes, 1 geng = 12/5,
+# or 24/10 (which I was suspecting).
+
+# 12 / 5 = 2.4
+# g = 2.4h
+# there are 10 geng in a day, then
+
+# geng_minutes = g * m = 144;
+# geng_seconds = g * m * s = 8640;
+# is the seconds in a day still equal to the
+# 24h scheme?
+# geng_seconds_in_day = 10 * 8640 = 86400;
