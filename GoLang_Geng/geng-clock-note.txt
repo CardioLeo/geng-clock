@@ -1,0 +1,6 @@
+this is just a note to say
+I should experiment with the lines in
+the 6th puzzle
+to maybe actually write my geng-clock idea.....
+
+puzzle 9 also is relevant to studying clocks in goLang
